@@ -219,6 +219,7 @@ a.link::after {
   margin: 0 0 -15px -30px;
   animation: sprite-icon 3s steps(1) infinite;
 }
+/* steps() >> 몇 회의 스텝으로 애니메이션을 처리할 지 만들 수 있음(애니메이션이 딱딱 끊기는 것) */
 
 .info .icon.icon--chip         { background-image: url("../images/sprite_chip.png"); }
 .info .icon.icon--faster       { background-image: url("../images/sprite_faster.png"); }
@@ -238,6 +239,11 @@ a.link::after {
 .info .icon.icon--keyboard     { background-image: url("../images/sprite_keyboard.png"); }
 .info .icon.icon--notes        { background-image: url("../images/sprite_notes.png"); }
 .info .icon.icon--covers       { background-image: url("../images/sprite_covers.png"); }
+
+/* sprite image와 @keyframes 규칙을 이용해서 애니메이션 처리를 할 수 있게 함 */
+/* background-image 속성은 이미지를 나타내 주기 위해 크기가 존재해야 함,
+  그래서, .info .icon {} 태그 부분에 가로/세로값을 지정해 줌 */
+
 
 .info p {
   font-size: 21.5px;
@@ -2624,7 +2630,7 @@ footer .legal ul li:hover a {
 
 
 /* animation 속성
-: @keyframes로 정한 규칙을 애니메이션으로 제어
+: @keyframes로 정한 규칙을 애니메이션 속성으로 제어
 : @keyframes 원하는 이름 { }
 : animation 단축속성으로 사용할 때: keyframes name, duration(이름이랑 지속시간은 순서 지켜줌) 이후 개별 속성은 순서 상관없이 작성 가능.
   */
